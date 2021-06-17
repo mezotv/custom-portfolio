@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Mezo</title>
+    <link rel="stylesheet" href="css/index.css"> 
+</head>
+<body>
+  <div class="smooth-scroll-wrapper">
+    <div class="content">
+ 
+      <script>
+    const body = document.body,
+        scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+        height = scrollWrap.getBoundingClientRect().height - 1,
+        speed = 0.04;
+
+    var offset = 0;
+
+    body.style.height = Math.floor(height) + "px";
+
+    function smoothScroll() {
+        offset += (window.pageYOffset - offset) * speed;
+
+        var scroll = "translateY(-" + offset + "px) translateZ(0)";
+        scrollWrap.style.transform = scroll;
+
+        callScroll = requestAnimationFrame(smoothScroll);
+    }
+
+    smoothScroll();
+      </script>
+    </div>
+  </div>
+</body>
+</html>
